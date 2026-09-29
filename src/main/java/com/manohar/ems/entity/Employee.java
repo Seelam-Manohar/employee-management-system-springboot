@@ -1,5 +1,6 @@
 package com.manohar.ems.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -19,6 +20,7 @@ public class Employee {
 
     @NotBlank(message = "Email is required")
     @Email(message = "Enter a valid email")
+    @Column(unique = true)
     private String email;
 
     @Min(value = 0, message = "Salary cannot be negative")
